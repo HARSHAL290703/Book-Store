@@ -19,7 +19,8 @@ const Home = () => {
         </div>
       </div>
       <div className="w-full lg: w-3/6 h-auto lg:h-[100%] flex items-center justify-center">
-        <img src="book animation.gif" alt="hero  "style={{ borderRadius: "50px" , width: "600px", height: "auto"}} />
+        <img src="https://i.pinimg.com/originals/2f/ab/f3/2fabf3ceb5a35b51a70e27137d56e4d2.gif
+" alt="hero  "style={{ borderRadius: "50px" , width: "600px", height: "auto"}} />
       </div>
     </div>
   );
