@@ -20,7 +20,8 @@ const SignUp = () => {
         }
         else{
             const response = await axios.post(
-                "http://localhost:1000/api/v1/Sign-up",
+              
+              `${import.meta.env.VITE_BACKEND_URL}/api/v1/Sign-up`,
                 Values
             );
             alert(response.data.message);

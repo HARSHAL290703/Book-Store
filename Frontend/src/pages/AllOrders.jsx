@@ -18,8 +18,8 @@ const AllOrders = () => {
   };
   useEffect(() => {
     const fetch = async () => {
-      const response = await axios.get(
-        "http://localhost:1000/api/v1/get-all-order",
+      const response = await axios.get( 
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/get-all-order`,
         { headers }
       );
       setAllOrders(response.data.data);

@@ -23,7 +23,7 @@ const LogIn = () => {
         alert("All fields are required");
       } else {
         const response = await axios.post(
-          "http://localhost:1000/api/v1/Sign-in",
+          `${import.meta.env.VITE_BACKEND_URL}/api/v1/Sign-in`,
           Values
         );
         dispatch(authActions.login());

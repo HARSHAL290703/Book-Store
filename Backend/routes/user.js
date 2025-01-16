@@ -66,13 +66,15 @@ router.post("/sign-in", async (req, res) => {
                 { name: existingUser.username },
                 { role: existingUser.role },
             ];
-            const token = jwt.sign({ authClaims }, "bookStore123", { expiresIn: "30d" });
+            const token = jwt.sign({ authClaims }, "bookStore123");
             return res.status(200).json({
                 id: existingUser._id,
                 role: existingUser.role,
                 token: token,
             });
-        } else {
+        }
+         else 
+        {
             return res.status(400).json({ message: "Invalid credentials" });
         }
     } catch (error) {

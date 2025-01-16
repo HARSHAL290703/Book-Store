@@ -6,6 +6,7 @@ const { authenticateToken } = require("./userAuth");
 //put book to cart
  router.put("/add-to-cart",authenticateToken,async (req,res) => {
     try {
+
         const {bookid,id} = req.headers;
         const userData = await User.findById(id);
         const isBookinCart = userData.cart.includes(bookid);
@@ -52,7 +53,9 @@ const { authenticateToken } = require("./userAuth");
  //get cart of a particular user
  router.get("/get-user-cart", authenticateToken , async (req,res) => {
     try {
+
         const {id} = req.headers;
+        
         const userData = await User.findById(id).populate("cart");
         const cart = userData.cart.reverse();
 

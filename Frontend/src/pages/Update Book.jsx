@@ -40,7 +40,7 @@ const UpdateBook = () => {
         alert("All fields are required");
       } else {
         const response = await axios.put(
-          "http://localhost:1000/api/v1/update-book",
+          `${import.meta.env.VITE_BACKEND_URL}/api/v1/update-book`,
           Data,
           { headers }
         );
@@ -64,7 +64,7 @@ const UpdateBook = () => {
     const fetch = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:1000/api/v1/get-book-by-id/${id}`
+          `${import.meta.env.VITE_BACKEND_URL}/api/v1/get-book-by-id/${id}`,
         );
         console.log(response.data.data); 
         setData(response.data.data);
