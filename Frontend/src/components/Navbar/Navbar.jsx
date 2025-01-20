@@ -30,6 +30,8 @@ const Navbar = () => {
     } else {
       navigate(link);
     }
+    // Close the mobile navigation modal after redirect
+    setMobileNav("hidden");
   };
 
   return (
@@ -41,7 +43,7 @@ const Navbar = () => {
             src="https://cdn-icons-png.flaticon.com/128/10433/10433049.png"
             alt="logo"
           />
-          <h1 className="text-2xl text-yellow-100 font-semibold">
+          <h1 className="text-md sm:text-2xl text-yellow-100 font-semibold">
             BookUniverse
           </h1>
         </Link>
@@ -107,18 +109,18 @@ const Navbar = () => {
         ))}
         {!isLoggedIn && (
           <>
-            <Link
-              to="/LogIn"
+            <button
+              onClick={() => handleLinkClick("/LogIn")}
               className="px-8 mb-8 text-3xl font-semibold py-2 border border-blue-500 rounded text-white hover:bg-white hover:text-zinc-800 transition-all duration-300"
             >
               LogIn
-            </Link>
-            <Link
-              to="/SignUp"
+            </button>
+            <button
+              onClick={() => handleLinkClick("/SignUp")}
               className="px-8 mb-8 text-3xl font-semibold py-2 bg-blue-500 rounded hover:bg-white hover:text-zinc-800 transition-all duration-300"
             >
               SignUp
-            </Link>
+            </button>
           </>
         )}
       </div>
